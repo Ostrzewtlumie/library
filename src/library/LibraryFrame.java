@@ -7,6 +7,8 @@ import javax.swing.*;
 public class LibraryFrame extends JFrame
 {
 	private JButton addbutton, deletebutton, showbutton, exportbutton;
+	private JDialog dialog;
+	private JFrame owner;
 	public LibraryFrame()
 	{
 		JPanel panel=new JPanel();
@@ -14,8 +16,8 @@ public class LibraryFrame extends JFrame
 				{
 					public void actionPerformed(ActionEvent event)
 					{
-						JDialog frame=new JDialog();
-						frame.setVisible(true);
+						dialog=new JDialog(owner, true);
+						dialog.setVisible(true);
 					}
 				});
 		newButton(panel,"Usuń książkę",new ActionListener()
