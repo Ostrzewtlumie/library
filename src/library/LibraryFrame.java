@@ -1,5 +1,4 @@
 package library;
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -7,7 +6,10 @@ import javax.swing.*;
 public class LibraryFrame extends JFrame
 {
 	private JButton addbutton, deletebutton, showbutton, exportbutton;
-	private JDialog dialog;
+	private AddFrame addframe;
+	private DelFrame delframe;
+	private ShowFrame showframe;
+	private ExportFrame exportframe;
 	private JFrame owner;
 	public LibraryFrame()
 	{
@@ -16,29 +18,28 @@ public class LibraryFrame extends JFrame
 				{
 					public void actionPerformed(ActionEvent event)
 					{
-						dialog=new JDialog(owner, true);
-						dialog.setVisible(true);
+						addframe=new AddFrame();
 					}
 				});
 		newButton(panel,"Usuń książkę",new ActionListener()
 		{
 			public void actionPerformed(ActionEvent event)
 			{
-				System.exit(0);
+				delframe=new DelFrame();
 			}
 		});
 		newButton(panel,"Pokaz ksiązki",new ActionListener()
 		{
 			public void actionPerformed(ActionEvent event)
 			{
-				System.exit(0);
+				showframe=new ShowFrame();			
 			}
 		});
 		newButton(panel,"Wyślij do txt",new ActionListener()
 		{
 			public void actionPerformed(ActionEvent event)
 			{
-				System.exit(0);
+				exportframe=new ExportFrame();
 			}
 		});
 		add(panel,BorderLayout.SOUTH);

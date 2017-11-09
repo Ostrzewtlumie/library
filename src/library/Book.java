@@ -1,9 +1,9 @@
 package library;
 
-public class book {
+public class Book {
 	private  String authorN, authorS, title;
 	private int publicY;
-	public book(String aauthorN,String aauthorS,String atitle,int apublicY )
+	public Book(String aauthorN,String aauthorS,String atitle,int apublicY )
 	{
 		authorN=aauthorN;
 		authorS=aauthorS;
