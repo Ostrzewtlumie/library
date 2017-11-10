@@ -22,4 +22,8 @@ public class ExportFrame extends JDialog
 		dialog.add(panel);
 		dialog.setVisible(true);
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 668f1f93ebc05cf98b800b3ce0d4d52dc60c9d13
