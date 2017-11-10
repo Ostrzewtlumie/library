@@ -9,6 +9,7 @@ public class main {
 				public void run() {
 					JFrame frame=new LibraryFrame();
 					frame.setTitle("Biblioteka");
+					frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 					frame.setVisible(true);
 				}
 			});
