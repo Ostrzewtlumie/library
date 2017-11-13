@@ -1,12 +1,11 @@
 package library;
 
 public class Book {
-	private  String authorN, authorS, title;
-	private int publicY;
-	public Book(String aauthorN,String aauthorS,String atitle,int apublicY )
+	private  String authorN, title;
+	private String publicY;
+	public Book(String aauthorN,String atitle,String apublicY )
 	{
 		authorN=aauthorN;
-		authorS=aauthorS;
 		title=atitle;
 		publicY=apublicY;
 	}
@@ -15,15 +14,11 @@ public class Book {
 	{
 		return authorN;
 	}
-	public String getSecondName()
-	{
-		return authorS;
-	}
 	public String getTitle()
 	{
 		return title;
 	}
-	public int getPublic()
+	public String getPublic()
 	{
 		return publicY;
 	}
@@ -31,15 +26,11 @@ public class Book {
 	{
 		authorN=aauthorN;
 	}
-	public void setSecondNAme(String aauthorS)
-	{
-		authorS=aauthorS;
-	}
 	public void setTitle(String atitle)
 	{
 		title=atitle;
 	}
-	public void setPublic(int apublicY)
+	public void setPublic(String apublicY)
 	{
 		publicY=apublicY;
 	}

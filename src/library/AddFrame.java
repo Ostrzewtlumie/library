@@ -3,21 +3,32 @@ package library;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.NumberFormat;
 
 import javax.swing.*;
 
-public class AddFrame extends JDialog 
+public class AddFrame extends JFrame 
 {
 	private Frame owner;
 	private JDialog dialog;
 	private JTextArea text,text1,text2;
+	private JComboBox<String> date;
 	private JButton okbutton,cancelbutton;
+	boolean ok=false;
 	public AddFrame()
 	{
+		
 		dialog=new JDialog(owner, true);
 		dialog.setSize(500,100);
 		text=new JTextArea(1,1);
 		text1=new JTextArea(1,1);
+		text2=new JTextArea(1,1);
+		date=new JComboBox<>();
+
+		for(int i=1200;i<=2017;i++)
+		{
+			date.addItem(""+i);
+		}
 		text2=new JTextArea(1,1);
 		
 		okbutton=new JButton("Wyślij");
@@ -26,8 +37,9 @@ public class AddFrame extends JDialog
 		{
 			public void actionPerformed(ActionEvent event) 
 			{
+				ok=true;
 				dialog.setVisible(false);
-			}
+							}
 		});
 		
 		JPanel panel=new JPanel();
@@ -105,11 +117,18 @@ public class AddFrame extends JDialog
 		panel.add(new JLabel("Tytuł: "),con4);
 		panel.add(text1,con1);
 		panel.add(new JLabel("Rok wydania:"),con5);
-		panel.add(text2,con2);
+		panel.add(date,con2);
 		panel.add(okbutton,con6);
 		panel.add(cancelbutton,con7);
 		add(panel,BorderLayout.SOUTH);
 		dialog.add(panel);
 		dialog.setVisible(true);
+
+	}
+
+	
+	public Book getBook()
+	{
+		return new Book(text.getText(),text1.getText(),date.getItemAt(date.getSelectedIndex()));
 	}
 }

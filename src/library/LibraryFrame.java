@@ -1,7 +1,11 @@
 package library;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+
 import javax.swing.*;
+
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Text;
 
 public class LibraryFrame extends JFrame
 {
@@ -11,14 +15,22 @@ public class LibraryFrame extends JFrame
 	private ShowFrame showframe;
 	private ExportFrame exportframe;
 	private JFrame owner;
+	static ArrayList<Book> book;
+
 	public LibraryFrame()
 	{
+		book=new ArrayList<>();
 		JPanel panel=new JPanel();
 		newButton(panel,"Dodaj Ksiązkę",new ActionListener()
 				{
 					public void actionPerformed(ActionEvent event)
 					{
 						addframe=new AddFrame();
+						if(addframe.ok)
+						{
+							Book  b=addframe.getBook();
+							book.add(b);
+						}
 					}
 				});
 		newButton(panel,"Usuń książkę",new ActionListener()

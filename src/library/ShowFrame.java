@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class ShowFrame extends JDialog
+public class ShowFrame extends JFrame
 {
 	private Frame owner;
 	private JDialog dialog;
@@ -14,6 +14,8 @@ public class ShowFrame extends JDialog
 	private JButton backbutton;
 	public ShowFrame()
 	{
+		for (Book b: LibraryFrame.book)
+			System.out.println(b.getName()+" "+b.getTitle()+" "+b.getPublic());
 		dialog=new JDialog(owner, true);
 		dialog.setSize(500,100);
 

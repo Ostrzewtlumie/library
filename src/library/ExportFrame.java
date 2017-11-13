@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class ExportFrame extends JDialog 
+public class ExportFrame extends JFrame
 {
 	private Frame owner;
 	private JDialog dialog;

@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class DelFrame extends JDialog 
+public class DelFrame extends JFrame 
 {
 	private Frame owner;
 	private JDialog dialog;
