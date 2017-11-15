@@ -3,8 +3,17 @@ package library;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import javax.swing.*;
+
+import javafx.print.Printer;
+
 
 public class ExportFrame extends JFrame
 {
@@ -18,6 +27,27 @@ public class ExportFrame extends JFrame
 		dialog.setSize(500,100);
 		text=new JTextArea(1,10);
 		okbutton=new JButton("Wyślij");
+		okbutton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent event) 
+			{
+				try {
+					PrintWriter pw=new PrintWriter(new FileOutputStream(GetPath()));
+					for(Book b: LibraryFrame.book)
+					{
+						pw.println(b.getName()+" "+b.getTitle()+" "+b.getPublic());
+					}
+					pw.close();
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				dialog.setVisible(false);
+			}
+
+		
+		});
 	    cancelbutton=new JButton("Anuluj");
 		cancelbutton.addActionListener(new ActionListener()
 		{
@@ -74,5 +104,8 @@ public class ExportFrame extends JFrame
 		dialog.add(panel);
 		dialog.setVisible(true);
 	}
-	
+	public String GetPath()
+	{
+		return text.getText();
+	}
 }

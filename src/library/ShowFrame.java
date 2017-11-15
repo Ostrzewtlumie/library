@@ -10,16 +10,25 @@ public class ShowFrame extends JFrame
 {
 	private Frame owner;
 	private JDialog dialog;
+	private JLabel label,label1;
+
 
 	private JButton backbutton;
 	public ShowFrame()
 	{
-		for (Book b: LibraryFrame.book)
-			System.out.println(b.getName()+" "+b.getTitle()+" "+b.getPublic());
 		dialog=new JDialog(owner, true);
 		dialog.setSize(500,100);
 
 		JPanel panel=new JPanel();
+		
+		for (Book b: LibraryFrame.book)
+		{
+			//System.out.println(b.getName()+" "+b.getTitle()+" "+b.getPublic());
+			 label=new JLabel();
+			 label.setText(b.getName()+" "+b.getTitle()+" "+b.getPublic()+"\n");
+			 
+			 panel.add(label);
+		}
 		
 		backbutton=new JButton("Cofnij");
 		backbutton.addActionListener(new ActionListener()
