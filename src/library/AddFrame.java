@@ -32,12 +32,20 @@ public class AddFrame extends JFrame
 		text2=new JTextArea(1,1);
 		
 		okbutton=new JButton("Wyślij");
+		okbutton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent event) 
+			{
+				ok=true;
+				dialog.setVisible(false);
+							}
+		});
 	    cancelbutton=new JButton("Anuluj");
 		cancelbutton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent event) 
 			{
-				ok=true;
+				ok=false;
 				dialog.setVisible(false);
 							}
 		});
@@ -112,9 +120,9 @@ public class AddFrame extends JFrame
 		con7.gridy=3;
 		
 		add(panel,BorderLayout.CENTER);
-		panel.add(new JLabel("Imię i nazwidko autora: "),con3);
+		panel.add(new JLabel("Tytuł: "),con3);
 		panel.add(text,con);
-		panel.add(new JLabel("Tytuł: "),con4);
+		panel.add(new JLabel("Imię i nazwidko autora: "),con4);
 		panel.add(text1,con1);
 		panel.add(new JLabel("Rok wydania:"),con5);
 		panel.add(date,con2);

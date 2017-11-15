@@ -32,7 +32,7 @@ public class ExportFrame extends JFrame
 
 		GridBagLayout layout=new GridBagLayout();
 		panel.setLayout(layout);
-		
+		//etykieta1
 		GridBagConstraints con=new GridBagConstraints();
 		con.weightx=10;
 		con.weighty=10;
@@ -40,7 +40,7 @@ public class ExportFrame extends JFrame
 		con.gridwidth=1;
 		con.gridx=0;
 		con.gridy=0;
-		
+		//nazwa pliku
 		GridBagConstraints con1=new GridBagConstraints();
 		con1.weightx=10;
 		con1.weighty=10;
@@ -48,7 +48,7 @@ public class ExportFrame extends JFrame
 		con1.gridwidth=1;
 		con1.gridx=1;
 		con1.gridy=0;
-		
+		//przycisk ok
 		GridBagConstraints con2=new GridBagConstraints();
 		con2.weightx=10;
 		con2.weighty=10;
@@ -56,7 +56,7 @@ public class ExportFrame extends JFrame
 		con2.gridwidth=1;
 		con2.gridx=0;
 		con2.gridy=1;
-
+		//przycisk anuluj
 		GridBagConstraints con3=new GridBagConstraints();
 		con3.weightx=10;
 		con3.weighty=10;

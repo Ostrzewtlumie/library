@@ -2,6 +2,8 @@ package library;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Objects;
 
 import javax.swing.*;
 
@@ -38,6 +40,20 @@ public class LibraryFrame extends JFrame
 			public void actionPerformed(ActionEvent event)
 			{
 				delframe=new DelFrame();
+				if(delframe.ok)
+					{
+					String title=delframe.getTitlee();
+						for(Iterator<Book> iterator =book.iterator();iterator.hasNext();)
+							{
+							Book value=iterator.next();
+								if(Objects.equals(value.getTitle(),title))
+									{
+										iterator.remove();
+									}
+
+							}
+					}
+					
 			}
 		});
 		newButton(panel,"Pokaz ksiązki",new ActionListener()
