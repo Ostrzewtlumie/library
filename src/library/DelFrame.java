@@ -17,7 +17,7 @@ public class DelFrame extends JFrame
 	{
 		dialog=new JDialog(owner, true);
 		dialog.setSize(500,100);
-		text=new JTextArea(1,1);
+		text=new JTextArea(1,10);
 		deletebutton=new JButton("Usuń");
 		deletebutton.addActionListener(new ActionListener()
 		{

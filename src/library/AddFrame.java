@@ -7,6 +7,7 @@ import java.text.NumberFormat;
 
 import javax.swing.*;
 
+
 public class AddFrame extends JFrame 
 {
 	private Frame owner;
@@ -20,9 +21,10 @@ public class AddFrame extends JFrame
 		
 		dialog=new JDialog(owner, true);
 		dialog.setSize(500,100);
-		text=new JTextArea(1,1);
-		text1=new JTextArea(1,1);
-		text2=new JTextArea(1,1);
+		text=new JTextArea(1,10);
+		text.setText("Autor");
+		text1=new JTextArea(1,10);
+		text1.setText("Tytuł");
 		date=new JComboBox<>();
 
 		for(int i=1200;i<=2017;i++)

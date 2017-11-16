@@ -33,6 +33,7 @@ public class ExportFrame extends JFrame
 			{
 				try {
 					PrintWriter pw=new PrintWriter(new FileOutputStream(GetPath()));
+					pw.println("Autor Tytutł Data wydania");
 					for(Book b: LibraryFrame.book)
 					{
 						pw.println(b.getName()+" "+b.getTitle()+" "+b.getPublic());

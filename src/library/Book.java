@@ -22,16 +22,4 @@ public class Book {
 	{
 		return publicY;
 	}
-	public void setName(String aauthorN)
-	{
-		authorN=aauthorN;
-	}
-	public void setTitle(String atitle)
-	{
-		title=atitle;
-	}
-	public void setPublic(String apublicY)
-	{
-		publicY=apublicY;
-	}
 }
